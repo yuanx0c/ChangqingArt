@@ -356,3 +356,102 @@ body[data-lang="en"] p.lang.en, body[data-lang="en"] #bio p.lang.en { display:bl
   justify-content: center;
   align-items: center;
 }
+
+/* Mobile compatibility */
+@media (max-width: 768px) {
+  :root { --header-h: 132px; --content-width: 100%; }
+
+  header .container {
+    padding: 8px 12px;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .header-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    width: calc(100% - 84px);
+  }
+
+  header h1 { font-size: 1.1rem; }
+
+  .header-left nav {
+    display: flex;
+    gap: 8px;
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 4px;
+  }
+
+  nav a {
+    margin-right: 0;
+    font-size: 0.9rem;
+    flex: 0 0 auto;
+  }
+
+  .lang-switch button {
+    font-size: 0.82rem;
+    padding: 6px 8px;
+  }
+
+  main { scroll-snap-type: y proximity; }
+  section {
+    padding: 16px;
+    min-height: calc(100vh - var(--header-h));
+  }
+
+  .hero {
+    padding: 28px 8px 20px;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+    line-height: 1.15;
+    transform: none;
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+    line-height: 1.5;
+    transform: none;
+  }
+
+  .hero-cta { margin-top: 14px; }
+
+  .author-select-container { margin-top: 1.25rem; }
+  .author-select-title { font-size: 1.1rem !important; margin-bottom: 6px !important; }
+  .author-select-category .carousel-track { gap: 8px; padding: 0; }
+  .author-select-category .carousel-track .work { max-width: 180px; padding: 8px; }
+  .author-select-category .carousel-track .work img { max-height: 140px; }
+
+  #bio .bio-inner { transform: none; gap: 16px; }
+  #bio .bio-right h2 { font-size: 1.4rem; }
+  #bio .bio-right p { font-size: 1rem; line-height: 1.7; }
+
+  #works .container { transform: none; }
+  .works-title { font-size: 1.7rem; margin: 0 0 10px; }
+  .works-grid { column-count: 2; column-gap: 10px; margin-top: 8px; }
+  .works-grid .work { margin-bottom: 10px; }
+
+  .practice-container { transform: none; padding-top: 0; }
+  .practice-header h2 { font-size: 1.6rem; }
+  .practice-card h3, .practice-images { width: 100%; }
+  .practice-images img { height: 260px; }
+
+  .contact-container { padding-top: 0; }
+  .contact-title { font-size: 1.6rem; margin-bottom: 14px; }
+  .contact-line { font-size: 1rem; line-height: 1.7; margin-bottom: 10px; }
+  .contact-banner { width: 100%; margin: 0 0 14px; }
+
+  .lightbox-content { width: 95%; padding: 14px; }
+  .lightbox-grid { grid-template-columns: 1fr; gap: 12px; }
+  .close-lightbox { right: 12px; top: 6px; font-size: 28px; }
+}
+
+@media (max-width: 480px) {
+  .hero-title { font-size: 1.8rem; }
+  .works-grid { column-count: 1; }
+  .practice-images img { height: 220px; }
+}
