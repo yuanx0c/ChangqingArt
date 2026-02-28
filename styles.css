@@ -57,9 +57,9 @@ h2 { font-size:1.3rem; margin-bottom:40px; font-weight:600; letter-spacing:0.02e
 #bio .bio-right p.lang.zh { font-family: 'Kaiti SC', 'STKaiti', 'KaiTi', '楷体', serif; }
 
 /* Works section vertical offset to move content upward */
-#works .container { transform: translateY(-120px); }
+#works .container { transform: translateY(-40px); }
 @media (max-width:1200px){
-	#works .container { transform: translateY(-80px); }
+	#works .container { transform: translateY(-20px); }
 }
 @media (max-width:900px){
 	#works .container { transform: none; }
@@ -123,7 +123,7 @@ body[data-lang="en"] p.lang.en, body[data-lang="en"] #bio p.lang.en { display:bl
 
 
 /* Hero / Home */
-.hero { padding:180px 20px 40px; text-align:center; background:linear-gradient(180deg, #fff, #fbfbfb); align-items:flex-start; }
+.hero { padding:100px 20px 40px; text-align:center; background:linear-gradient(180deg, #fff, #fbfbfb); align-items:flex-start; }
 .hero-title { font-size:64px; line-height:1.02; margin:6px 0 8px; font-weight:600; color:#0f1724; transform: translateY(-12%); }
 .hero-sub { font-size:20px; color:#55606a; margin-bottom:8px; transform: translateY(-6%); }
 .hero-cta { margin-top:24px; }
@@ -198,3 +198,161 @@ body[data-lang="en"] p.lang.en, body[data-lang="en"] #bio p.lang.en { display:bl
   cursor: pointer;
 }
 
+
+/* Grid / Masonry layout for paintings */
+.works-grid { column-count:4; column-gap:20px; width:100%; margin-top:20px; }
+.works-grid .work { break-inside:avoid; margin-bottom:20px; display:inline-block; width:100%; }
+.works-grid .work img { width:100%; height:auto; display:block; border-radius:6px; box-shadow:0 12px 32px rgba(16,24,40,0.12); cursor:zoom-in; transition:transform 0.2s; }
+.works-grid .work:hover img { transform:scale(1.02); }
+
+@media (max-width: 1100px) { .works-grid { column-count:3; } }
+@media (max-width: 800px) { .works-grid { column-count:2; } }
+@media (max-width: 500px) { .works-grid { column-count:1; } }
+
+/* Style for the Author Select title in hero */
+.author-select-title { margin-left: 0 !important; font-size: 1.5rem !important; margin-bottom: 0.5rem !important; }
+
+/* Container for the author select section in hero */
+.author-select-container {
+    width: 100%;
+    margin-top: 3rem;
+    position: relative;
+    text-align: left; /* Align title and content to the left */
+}
+
+/* Specific styling for the title */
+.author-select-title {
+    margin-left: 0;
+  margin-bottom: 8px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f1724;
+}
+
+/* Adjust the carousel inside author-select to be smaller */
+.author-select-category .carousel-track {
+    gap: 10px;
+  padding: 2px 0; /* tighter spacing under title */
+}
+
+/* Smaller cards for author select */
+.author-select-category .carousel-track .work {
+    max-width: 280px; /* Reduced from 450px */
+    padding: 12px;
+    border-radius: 10px;
+}
+
+/* Smaller images for author select */
+.author-select-category .carousel-track .work img {
+    max-height: 220px; /* Reduced from 400px */
+}
+
+/* Artistic Practice section */
+#practice { align-items: flex-start; }
+.practice-container { width: 100%; padding-top: 0; transform: translateY(-36px); }
+.practice-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px; }
+.practice-header h2 { margin: 0; font-size: 2.8rem; font-weight: 700; }
+
+.practice-scroll {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.practice-card {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.practice-card h3 {
+  margin: 0 0 14px;
+  font-size: 1.125rem;
+  line-height: 1.85;
+  font-weight: 400;
+  width: 82%;
+}
+
+.practice-images {
+  display: grid;
+  gap: 14px;
+  width: 82%;
+}
+
+.practice-images.two-cols { grid-template-columns: 1fr 1fr; }
+.practice-images.single-col { grid-template-columns: 1fr; max-width: 720px; }
+
+.practice-images img {
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 1100px) {
+  .practice-header h2 { font-size: 2.2rem; }
+  .practice-card h3 { font-size: 1.125rem; }
+  .practice-images img { height: 520px; }
+}
+
+@media (max-width: 800px) {
+  .practice-images.two-cols { grid-template-columns: 1fr; }
+  .practice-images img { height: 420px; }
+}
+
+/* Contact section */
+#contact { align-items: flex-start; }
+.contact-container { width: 100%; padding-top: 8px; }
+.contact-title {
+  margin: 0 0 26px;
+  font-size: 3rem;
+  font-weight: 700;
+}
+.contact-line {
+  margin: 0 0 18px;
+  font-size: 1.125rem;
+  line-height: 1.85;
+  font-weight: 400;
+  color: var(--text);
+}
+#contact .contact-line.lang.en { font-family: 'Times New Roman', Times, serif; }
+#contact .contact-line.lang.zh { font-family: 'Kaiti SC', 'STKaiti', 'KaiTi', '楷体', serif; }
+.contact-social { margin-bottom: 22px; }
+.contact-banner {
+  width: 64%;
+  margin: 0 auto 22px;
+}
+.contact-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.contact-email { margin-top: 10px; }
+
+@media (max-width: 1000px) {
+  .contact-title { font-size: 2.3rem; }
+  .contact-line { font-size: 1rem; line-height: 1.7; }
+  .contact-banner { width: 82%; }
+}
+
+/* Make sure lightbox is on top and covers whole screen */
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85); /* Darker backdrop */
+  z-index: 10000; /* Ensure it is on top of everything */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
