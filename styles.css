@@ -357,7 +357,32 @@ body[data-lang="en"] p.lang.en, body[data-lang="en"] #bio p.lang.en { display:bl
   align-items: center;
 }
 
-/* Mobile compatibility */
+/* Mobile compatibility for different terminals */
+img { max-width: 100%; }
+main { -webkit-overflow-scrolling: touch; }
+
+/* Tablet / large phones */
+@media (max-width: 1024px) {
+  :root { --content-width: 100%; }
+  section { padding: 20px; }
+
+  .hero-title { font-size: 3rem; }
+  .hero-sub { font-size: 1.1rem; }
+
+  #bio .bio-inner { transform: none; gap: 22px; }
+  #works .container { transform: none; }
+
+  .practice-container { transform: none; }
+  .practice-header h2 { font-size: 2rem; }
+  .practice-card h3,
+  .practice-images { width: 92%; }
+  .practice-images img { height: 420px; }
+
+  .contact-title { font-size: 2rem; }
+  .contact-banner { width: 82%; }
+}
+
+/* Common phones */
 @media (max-width: 768px) {
   :root { --header-h: 132px; --content-width: 100%; }
 
@@ -374,7 +399,7 @@ body[data-lang="en"] p.lang.en, body[data-lang="en"] #bio p.lang.en { display:bl
     width: calc(100% - 84px);
   }
 
-  header h1 { font-size: 1.1rem; }
+  header h1 { font-size: 1.06rem; }
 
   .header-left nav {
     display: flex;
@@ -387,13 +412,14 @@ body[data-lang="en"] p.lang.en, body[data-lang="en"] #bio p.lang.en { display:bl
 
   nav a {
     margin-right: 0;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     flex: 0 0 auto;
   }
 
   .lang-switch button {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     padding: 6px 8px;
+    min-height: 34px;
   }
 
   main { scroll-snap-type: y proximity; }
@@ -402,46 +428,31 @@ body[data-lang="en"] p.lang.en, body[data-lang="en"] #bio p.lang.en { display:bl
     min-height: calc(100vh - var(--header-h));
   }
 
-  .hero {
-    padding: 28px 8px 20px;
-  }
+  .hero { padding: 20px 8px 16px; }
+  .hero-title { font-size: 2.2rem; line-height: 1.15; transform: none; }
+  .hero-sub { font-size: 0.98rem; line-height: 1.55; transform: none; }
+  .hero-cta { margin-top: 12px; }
 
-  .hero-title {
-    font-size: 2.2rem;
-    line-height: 1.15;
-    transform: none;
-  }
-
-  .hero-sub {
-    font-size: 1rem;
-    line-height: 1.5;
-    transform: none;
-  }
-
-  .hero-cta { margin-top: 14px; }
-
-  .author-select-container { margin-top: 1.25rem; }
-  .author-select-title { font-size: 1.1rem !important; margin-bottom: 6px !important; }
+  .author-select-container { margin-top: 1rem; }
+  .author-select-title { font-size: 1.05rem !important; margin-bottom: 6px !important; }
   .author-select-category .carousel-track { gap: 8px; padding: 0; }
-  .author-select-category .carousel-track .work { max-width: 180px; padding: 8px; }
-  .author-select-category .carousel-track .work img { max-height: 140px; }
+  .author-select-category .carousel-track .work { max-width: 170px; padding: 8px; }
+  .author-select-category .carousel-track .work img { max-height: 130px; }
 
-  #bio .bio-inner { transform: none; gap: 16px; }
-  #bio .bio-right h2 { font-size: 1.4rem; }
+  #bio .bio-right h2 { font-size: 1.35rem; }
   #bio .bio-right p { font-size: 1rem; line-height: 1.7; }
 
-  #works .container { transform: none; }
-  .works-title { font-size: 1.7rem; margin: 0 0 10px; }
+  .works-title { font-size: 1.6rem; margin: 0 0 10px; }
   .works-grid { column-count: 2; column-gap: 10px; margin-top: 8px; }
   .works-grid .work { margin-bottom: 10px; }
 
-  .practice-container { transform: none; padding-top: 0; }
-  .practice-header h2 { font-size: 1.6rem; }
-  .practice-card h3, .practice-images { width: 100%; }
-  .practice-images img { height: 260px; }
+  .practice-header h2 { font-size: 1.55rem; }
+  .practice-card h3,
+  .practice-images { width: 100%; }
+  .practice-images img { height: 280px; }
 
   .contact-container { padding-top: 0; }
-  .contact-title { font-size: 1.6rem; margin-bottom: 14px; }
+  .contact-title { font-size: 1.55rem; margin-bottom: 12px; }
   .contact-line { font-size: 1rem; line-height: 1.7; margin-bottom: 10px; }
   .contact-banner { width: 100%; margin: 0 0 14px; }
 
@@ -450,8 +461,29 @@ body[data-lang="en"] p.lang.en, body[data-lang="en"] #bio p.lang.en { display:bl
   .close-lightbox { right: 12px; top: 6px; font-size: 28px; }
 }
 
+/* Small phones (iPhone mini/SE etc.) */
 @media (max-width: 480px) {
+  :root { --header-h: 138px; }
+
+  .container { padding: 12px; }
+  header h1 { font-size: 0.98rem; }
+  nav a { font-size: 0.82rem; }
+
   .hero-title { font-size: 1.8rem; }
+  .hero-sub { font-size: 0.92rem; }
+  .btn-explore { padding: 10px 16px; font-size: 0.9rem; }
+
+  .author-select-category .carousel-track .work { max-width: 150px; }
+  .author-select-category .carousel-track .work img { max-height: 116px; }
+
   .works-grid { column-count: 1; }
   .practice-images img { height: 220px; }
+  .contact-title { font-size: 1.35rem; }
+}
+
+/* Extra-small terminals */
+@media (max-width: 360px) {
+  .hero-title { font-size: 1.6rem; }
+  .author-select-category .carousel-track .work { max-width: 135px; }
+  .practice-images img { height: 190px; }
 }
